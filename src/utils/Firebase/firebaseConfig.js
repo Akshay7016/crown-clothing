@@ -35,7 +35,7 @@ googleProvider.setCustomParameters({
 export const auth = getAuth();
 export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider);
 
-export const db = getFirestore();
+export const db = getFirestore(firebaseApp);
 
 // To add entry of user in firestore
 export const createUserDocumentFromAuth = async (userAuth, additionalInformation = {}) => {
