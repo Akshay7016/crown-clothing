@@ -15,6 +15,10 @@ const Category = () => {
         setProducts(categoriesMap[category]);
     }, [category, categoriesMap])
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <Fragment>
             <h2 className='category-title'>{category}</h2>
