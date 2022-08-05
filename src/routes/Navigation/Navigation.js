@@ -5,8 +5,8 @@ import { ReactComponent as CrownLogo } from '../../assets/crown.svg'
 import { signOutUser } from '../../utils/Firebase/firebaseConfig';
 import CartIcon from '../../components/CartIcon/CartIcon';
 import CartDropdown from '../../components/CartDropdown/CartDropdown';
-import { UserContext } from '../../context/UserContext';
-import { CartContext } from '../../context/CartContext';
+import { UserContext } from '../../contexts/UserContext';
+import { CartContext } from '../../contexts/CartContext';
 
 import './Navigation.scss'
 
