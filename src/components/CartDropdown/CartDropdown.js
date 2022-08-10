@@ -8,10 +8,11 @@ import CartItem from '../CartItem/CartItem'
 import { CartDropdownContainer, EmptyMessage, CartItems } from './CartDropdown.styles'
 
 const CartDropdown = () => {
-    const { cartItems } = useContext(CartContext);
+    const { cartItems, setIsCartOpen, isCartOpen } = useContext(CartContext);
     const navigate = useNavigate();
 
     const goToCheckoutHandler = () => {
+        setIsCartOpen(!isCartOpen);
         navigate('/checkout');
     }
 
