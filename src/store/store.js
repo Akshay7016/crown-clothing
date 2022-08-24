@@ -10,7 +10,7 @@ const persistConfig = {
     key: 'root',
     storage: storage,
     // blacklist items(i.e. user reducer) should not be included in storage
-    blacklist: ['user']
+    whitelist: ['cart']
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
