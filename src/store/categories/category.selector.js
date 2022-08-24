@@ -24,5 +24,5 @@ export const selectCategoriesMap = createSelector(
 // that we use in order to access our categories quickly and efficiently in Category and
 // CategoriesPreview component
 
-// Memoized => Memorization is the process in which you cache the previous value of something
-// so that if the input has not changed, then you just return back the same output.
+// Memorization => Memorization is the process in which you cache the previous value of
+// something so that if the input has not changed, then you just return back the same output.
