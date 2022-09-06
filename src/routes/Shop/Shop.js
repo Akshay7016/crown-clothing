@@ -4,14 +4,14 @@ import { useDispatch } from 'react-redux'
 
 import CategoriesPreview from '../CategoriesPreview/CategoriesPreview'
 import Category from '../Category/Category'
-import { fetchCategoriesAsync } from '../../store/categories/category.action'
+import { fetchCategoriesStart } from '../../store/categories/category.action'
 
 const Shop = () => {
     const dispatch = useDispatch()
 
-    // async function inside useEffect()
+    // redux-saga used for asynchronous actions
     useEffect(() => {
-        dispatch(fetchCategoriesAsync())
+        dispatch(fetchCategoriesStart())
     }, [])
 
     return (

@@ -1,4 +1,6 @@
-const loggerMiddleware = (store) => (next) => (action) => {
+// If we want to use custom logger then use this "loggerMiddleware" in store.js
+
+export const loggerMiddleware = (store) => (next) => (action) => {
     // If there is no action type
     if (!action.type) {
         return next(action);
