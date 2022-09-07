@@ -91,7 +91,9 @@ export const createUserDocumentFromAuth = async (userAuth, additionalInformation
         }
     }
 
-    return userDocRef;
+    // Actual data is present in userSnapshot
+    // userDocRef is pointer which points to space where particular data live.
+    return userSnapshot;
 }
 
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
@@ -109,3 +111,19 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 export const signOutUser = async () => await signOut(auth);
 
 export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth, callback)
+
+export const getCurrentUser = () => {
+    return new Promise((resolve, reject) => {
+        const unsubscribe = onAuthStateChanged(
+            auth,
+            (userAuth) => {
+                // don't leave the listener running because this will cause a memory leak.
+                // Therefore, we immediately unsubscribe and forward the current user to 
+                // the resolve of the promise we created.
+                unsubscribe();
+                resolve(userAuth)
+            },
+            reject
+        )
+    })
+}
