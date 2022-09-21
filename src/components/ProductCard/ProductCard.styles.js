@@ -22,6 +22,13 @@ export const ProductCardContainer = styled.div`
     top: 255px;
     /* Initially button is not displayed */
     display: none;
+
+    @media screen and (max-width: 800px){
+      display: block;
+      opacity: 0.9;
+      min-width: unset;
+      padding: 0 10px;
+    }
   }
 
   &:hover {
@@ -34,6 +41,20 @@ export const ProductCardContainer = styled.div`
       // After hovering button is displayed
       display: flex;
     }
+  }
+
+  @media screen and (max-width: 800px){
+   width: 40vw;
+
+   &:hover {
+    img {
+      opacity: unset;
+    }
+
+    button {
+      opacity: unset;
+    }
+  }
   }
 `;
 

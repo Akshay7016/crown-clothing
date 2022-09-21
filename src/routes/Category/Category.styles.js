@@ -5,6 +5,13 @@ export const CategoryContainer = styled.div`
   grid-template-columns: repeat(4, 1fr);
   column-gap: 20px;
   row-gap: 50px;
+
+  @media screen and (max-width: 800px){
+    margin: 0 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    row-gap: 30px;
+  }
 `;
 
 export const CategoryTitle = styled.h2`
